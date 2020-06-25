@@ -68,6 +68,10 @@ h1 {
 
 /*Toggle*/
 
+.toggle-label {
+  color: var(--lightGrayishBlue);
+}
+
 .monthly {
   display: none;
 }
@@ -88,60 +92,50 @@ h1 {
   margin-bottom: 47px;
 }
 
-.toggle {
-  display: inline-block;
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.toggle-switch {
+.toggle-container label {
+  background-image: var(--linearGradient);
+  border-radius: 50px;
   cursor: pointer;
   display: inline-block;
-  background-image: var(--linearGradient);
-  border-radius: 16px;
-  width: 58px;
-  height: 32px;
+  margin: 0 10px;
   position: relative;
-  vertical-align: middle;
-  transition: background-image 0.25s;
-  transition: 0.3s ease 0s;
+  height: 30px;
+  width: 60px;
 }
 
-.toggle-switch:hover {
-  transition: 0.3s ease 0s;
-  opacity: 0.5;
-}
-
-.toggle-switch:before,
-.toggle-switch:after {
-  content: "";
-}
-
-.toggle-switch:before {
-  display: block;
+.toggle-container label .ball {
   background: var(--veryLightGrayishBlue);
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
   position: absolute;
   top: 4px;
   left: 4px;
-  transition: left 0.25s;
+  height: 22px;
+  width: 22px;
+  transition: transform 0.4s ease;
 }
 
-.toggle-checkbox:checked + .toggle-switch:before {
-  left: 30px;
-}
-
-.toggle-checkbox {
+.toggle-container input {
   position: absolute;
-  visibility: hidden;
+  left: -9999px;
 }
 
-.toggle-label {
-  margin-left: 15px;
-  margin-right: 15px;
-  position: relative;
-  top: 2px;
-  color: var(--lightGrayishBlue);
+.toggle-container input:checked + label .ball {
+  transform: translateX(30px);
+}
+
+label[for="toggle"] {
+  transition: 0.3s ease 0s;
+}
+
+label[for="toggle"]:hover {
+  transition: 0.3s ease 0s;
+  opacity: 0.5;
 }
 
 /*Plans*/

@@ -1,4 +1,4 @@
-const toggle = document.querySelector(".toggle-checkbox");
+const toggle = document.querySelector(".toggle");
 const plans = document.querySelector(".flex");
 
 toggle.addEventListener("change", (e) => {
